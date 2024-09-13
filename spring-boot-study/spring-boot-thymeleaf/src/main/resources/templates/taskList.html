@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no,1.0,maximum-scale=1.0,minimum-
+scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title> Todo List</title>
+</head>
+<body>
+  <h1>代办清单</h1>
+  <!--新增任务-->
+<form action="/addTask" method="post">
+    <input type="Text" name="name" placeholder="请输入任务名称" id="name">
+    <button type="submit">新增任务</button>
+</form>
+  <!--显示任务列表-->
+ <ul>
+     <li th:each="task : ${tasks}">
+         <span th:text="${task.name}" th:classappend="${task.completed} ? 'completed' : ''"></span>
+         <form action="/updateTak" method="post" style="display:inline;">
+             <input type="hidden" name="id" th:value="${task.id}">
+             <button type="submit">切换状态</button>
+         </form>
+         <form action="/deleteTask" method="post" style="display:inline;">
+             <input type="hidden" name="id" th:value="${task.id}">
+             <button type="submit">删除</button>
+
+         </form>
+     </li>
+ </ul>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no,1.0,maximum-scale=1.0,minimum-
+scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/style1.css">
+    <title>User List</title>
+</head>
+<style>
+    body{
+        font-family:Arial,sans-serif;
+        max-width:600px;
+        margin:0 auto;
+    }
+    #a1{
+        background-color: #fefefe;
+        width: 500px;
+        margin-top: 40px;
+        border-radius: 5px ;
+        box-shadow: 2px 2px 2px 2px #e9e9e9;
+    }
+    thead{
+        background-color: #f0f0f0;
+    }
+    table,th,td{
+        border:none;
+    }
+    button{
+        padding: 10px 15px;
+        color: white;
+        border: 2px solid #333;
+        background-color: #478ace;
+        border-radius: 5px ;
+    }
+</style>
+<body>
+ <div id="a1">
+     <h1 style="font-weight:bold;text-align:center;">用户列表</h1>
+     <div>
+         <table class="ui celled table" style="width: 500px;">
+             <thead>
+                 <tr>
+                     <th>ID</th>
+                     <th>姓名</th>
+                     <th>电子邮件</th>
+                 </tr>
+             </thead>
+             <tbody>
+             <tr th:each="user:${userlist}">
+                 <td data-label="id" th:text="${user.id}"></td>
+                 <td data-label="name" th:text="${user.name}"></td>
+                 <td data-label="email" th:text="${user.email}"></td>
+             </tr>
+             </tbody>
+         </table>
+     </div>
+     <form action="/addUserlist" method="post">
+         <input type="Text" name="name" placeholder="请输入用户姓名" id="name" style="height:20px;">
+         <input type="Text" name="email" placeholder="请输入用户邮箱" id="email" style="height:20px;">
+         <button type="submit">添加用户</button>
+     </form>
+ </div>
+
+</body>
+</html>

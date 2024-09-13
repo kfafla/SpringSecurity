@@ -1,0 +1,25 @@
+body{
+    font-family:Arial,sans-serif;
+    max-width:600px;
+    margin:0 auto;
+}
+#a1{
+    background-color: #fefefe;
+    width: 500px;
+    margin-top: 40px;
+    border-radius: 5px ;
+    box-shadow: 2px 2px 2px 2px #e9e9e9;
+}
+thead{
+    background-color: #f0f0f0;
+}
+table,th,td{
+    border:none;
+}
+button{
+    padding: 10px 15px;
+    color: white;
+    border: 2px solid #333;
+    background-color: #478ace;
+    border-radius: 5px ;
+}

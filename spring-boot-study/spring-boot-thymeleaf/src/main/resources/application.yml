@@ -1,0 +1,7 @@
+logging:
+  level:
+    root: info
+    top.xmy.springboot.thymeleaf: debug
+spring:
+  thymeleaf:
+    cache: false  #禁用 thymeleaf 的缓存
